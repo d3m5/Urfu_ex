@@ -9,10 +9,11 @@ public class Example12 {
         Calendar cal = Calendar.getInstance();
         int currentYear = cal.get(Calendar.YEAR);
 
-        System.out.print("Input year of birth: ");
-        int yearOfbirth = in.nextInt();
-        int age = currentYear-yearOfbirth;
+        System.out.print("Input year old: ");
+        int yearsOld = in.nextInt();
 
-        System.out.println("You are " +age+ " years old");
+        int age = currentYear-yearsOld;
+
+        System.out.println("You are " +age+ " year of birth");
     }
 }
