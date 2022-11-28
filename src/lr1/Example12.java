@@ -7,10 +7,13 @@ public class Example17 {
         Scanner in = new Scanner(System.in);
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
-        System.out.print("Input: ");
+
+        System.out.print("Input your age: ");
         int old = in.nextInt();
-        int yearOFbirth = year-old;
-        System.out.printf("Year " + yearOFbirth);
+
+        int yearOFbirth = year - old;
+
+        System.out.printf("Year of birth " + yearOFbirth);
         in.close();
 
 
