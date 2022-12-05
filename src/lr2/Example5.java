@@ -8,5 +8,6 @@ public class Example5 {
         System.out.print("Введите цисло А: ");
         int a = in.nextInt();
         System.out.println("Тысяч в числе A: " + a / 1000);
+        in.close();
     }
 }
