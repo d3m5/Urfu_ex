@@ -11,7 +11,6 @@ public class Example2 {
                 System.out.print("A делится на 5 и 7 ");
             } else {
                 System.out.print("В остатке не 2 и 1" );
-
             }
             in.close();
         }

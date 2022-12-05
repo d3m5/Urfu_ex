@@ -7,11 +7,10 @@ public class Example1 {
         Scanner in = new Scanner(System.in);
         float a = in.nextInt();
         if (a % 3 == 0) {
-            System.out.printf("A делится на 3");
+            System.out.print("Число A делится на 3");
         } else {
-            System.out.printf("A не делится на 3");
-
+            System.out.print("Число A не делится на 3");
         }
-        ;
+        in.close();
     }
 }
