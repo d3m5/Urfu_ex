@@ -2,12 +2,23 @@ package lr3;
 
 public class Example8 {
     public static void main(String[] args) {
-        String a = "BCDFGHJKLM";
+        String a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String b = "BCDFGHJKLMNPQRSTVWXYZ";
         String[] arr1 = new String[10];
-        for (int i = 0; i < 10; i++ ) {
+        int count = 0;
+        for (int i = 0; i < 26; i++ ) {
             char c = a.charAt(i);
-            arr1[i] = Character.toString(c);
+            for (int e = 0; e < 21; e++){
+                char d = b.charAt(e);
+                if (c == d) {
+                    arr1[count] = Character.toString(c);
+                    count++;
+                }
             }
+            if (count == 10) {
+                break;
+            }
+        }
         for (int i = 0; i < 10; i++ ) {
             System.out.print(arr1[i] + ",");
         }
