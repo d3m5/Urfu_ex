@@ -2,18 +2,17 @@ package lr4;
 
 public class Example2 {
     public static void main(String[] args) {
-        int z = 5; // высота треугольника
-        for (int i = 0; i <= z; i++) {
-            for (int s = 0; s <= i; s++) {
-                System.out.print("+");
+        int str = 5; // строки
+        int row = 5; // столбцы
+        for (int i = 0; i < str; i++) {
+            for (int j = 0; j < row; j++) {
+                if (i >= j) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
             }
-            System.out.print("\n"); // Новая строка
-        }
-        for (int i = 1; i <= z; i++) {
-            for (int s = z; s >= i; s--) {
-                System.out.print("+");
-            }
-            System.out.print("\n"); // Новая строка
+            System.out.print("\n");
         }
     }
 }
