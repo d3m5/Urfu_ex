@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class Example6 {
     public static void main(String[] args) {
-        Random random = new Random(200); // Создание объекта класса Random
+        Random random = new Random();
         int str = 5;
         int row = 5;
-        int[][] arr1 = new int[str][row]; // создание первого массива
+        int[][] arr1 = new int[str][row];
         for (int i = 0; i < str; i++) {
             for (int j = 0; j < row; j++) {
                 arr1[i][j] = random.nextInt(200);
@@ -23,14 +23,14 @@ public class Example6 {
 
         System.out.println(" ");
 
-        int deleteStr = random.nextInt(str - 1);
-        int deleteRow = random.nextInt(row - 1);
+        int deleteStr = random.nextInt(5) - 1;
+        int deleteRow = random.nextInt(5) - 1;
 
         System.out.println("Удалили строку = " + (deleteStr));
         System.out.println("Удалили столбец = " + (deleteRow));
         System.out.println(" ");
 
-        int[][] arr2 = new int[str - 1][row - 1]; // создание массива в котором удалена 1 строка и 1 столбец
+        int[][] arr2 = new int[str - 1][row - 1];
         for (int i = 0, s = 0; i < str - 1; s++) {
             if (s != deleteStr) {
                 for (int j = 0, k = 0; j < row - 1; k++) {
