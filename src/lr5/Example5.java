@@ -50,7 +50,7 @@ class Task5{
     }
     //конструктор, который работает по тому же принципу что и метод для присваивания значения полю.
     Task5(int int1){
-        System.out.println("Example_05() конструктор");
+        System.out.println("Task5() конструктор");
         this.Set(int1);
     }
 }
