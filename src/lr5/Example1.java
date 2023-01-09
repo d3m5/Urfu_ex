@@ -2,7 +2,7 @@ package lr5;
 
 import java.util.Scanner;
 
-class Main {
+public class Example1 {
     public static void main(String[] args) {
         Task1 task1 = new Task1();
         Scanner in = new Scanner(System.in);

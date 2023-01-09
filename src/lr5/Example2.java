@@ -1,6 +1,6 @@
 package lr5;
 
-class Main2 {
+public class Example2 {
     public static void main(String[] args) {
         Task2 task2 = new Task2();
         task2.Setch('A', 'D');
@@ -25,12 +25,12 @@ class Task2 {
 являющимися значениями полей объекта (из которого вызывается метод*/
         int int1 = ch1;
         int int2 = ch2;
-        if (ch1>ch2) {
+        if (ch1 > ch2) {
             int1 = ch2;
             int2 = ch1;
         }
         int schet = 1;
-        for (int i = int1; i<=int2; i++) {
+        for (int i = int1; i <= int2; i++) {
             System.out.println(schet + " symbol = " + (char) i);
             schet++;
         }
