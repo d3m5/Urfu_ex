@@ -16,8 +16,7 @@ public class Example9 {
         System.out.println("Минимальные знчения массива: ");
         for (int i = 0; i < arr1.length; i++)
         if(arr1[0] == arr1[i]){
-            int c = i;
-            System.out.println( "Значение: "+ arr1[i] + " Индекс: " + c);
+            System.out.println( "Значение: "+ arr1[i] + " Индекс: " + i);
         }
     }
 }
