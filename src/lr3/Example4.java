@@ -22,6 +22,7 @@ public class Example4 {
                 count++;
             }
         } else if (b > a) {
+            System.out.print("FOR : ");
             for (int i = a; b  >= i; i++) {
                 System.out.print(i + " ");
             }
