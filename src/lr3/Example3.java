@@ -10,7 +10,7 @@ public class Example3 {
         int c = 1;
         int e = 0;
         System.out.print("FOR: ");
-        for (int i = 0; i <= a ; i++) {
+        for (int i = 0; i <= a - 1 ; i++) {
            int summ = c + e;
             c = e;
             e = summ;
@@ -23,7 +23,7 @@ public class Example3 {
         c = 1;
         System.out.print("WHILE: ");
         int count = 0;
-        while (count <= a){
+        while (count <= a - 1){
             int summ = c + e;
             c = e;
             e = summ;
