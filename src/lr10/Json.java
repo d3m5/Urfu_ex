@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class Json {
 
-    protected void weatherSave(String site, String date, String temperature){
+    protected void weatherSave(String site, String date, String temperature) {
         JSONObject logTemerature = new JSONObject();
         JSONArray sites = new JSONArray();
 
@@ -33,25 +33,24 @@ public class Json {
         }
 
     }
-    protected void weatherRead(){
-        try{
+
+    protected void weatherRead() {
+        try {
             JSONParser parser = new JSONParser();
-            Object obj = parser
-                    .parse(new FileReader("src\\lr10\\Site-temperature.json"));
+            Object obj = parser.parse(new FileReader("src\\lr10\\Site-temperature.json"));
             JSONObject jsonObject = (JSONObject) obj;
             System.out.println("Корневой элемент: "
                     + jsonObject.keySet().iterator().next());
             JSONArray jsonArray = (JSONArray) jsonObject.get("sites");
 
-            for (Object o :jsonArray){
+            for (Object o : jsonArray) {
                 JSONObject weather = (JSONObject) o;
                 System.out.println("Запомненая погода");
                 System.out.println("Город:  " + weather.get("site"));
                 System.out.println("Дата:  " + weather.get("date"));
                 System.out.println("Температура: " + weather.get("temperature") + " C");
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

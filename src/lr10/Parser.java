@@ -11,16 +11,17 @@ public class Parser {
         String[] tempToSite = parseHttp.weatherGismeteo(url);
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
         Date date = new Date();
-        try {
-            Json json = new Json();
-            json.weatherSave(tempToSite[0], dateFormat.format(date), tempToSite[1]); // Запишем даные в JSON
-            json.weatherRead(); //Прочитаем JSON и выведем в консоль
-        } catch (NullPointerException e) {
-            e.printStackTrace();
+        if (tempToSite.length != 0) {
+            try {
+                Json json = new Json();
+                json.weatherSave(tempToSite[0], dateFormat.format(date), tempToSite[1]); // Запишем даные в JSON
+                json.weatherRead(); //Прочитаем JSON и выведем в консоль
+            } catch (NullPointerException e) {
+                System.out.println("Ошибка записи данных \n" + e);
+                e.printStackTrace();
+            }
         }
     }
-
-
 
 
 }

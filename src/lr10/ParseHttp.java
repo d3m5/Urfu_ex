@@ -11,15 +11,15 @@ public class ParseHttp {
     protected String[] weatherGismeteo(String url) {
         try {
             Document doc = Jsoup.connect(url).get();
-            Elements city = doc.select("[class=page-title]");
-            Elements temp = doc.select("[class=unit unit_temperature_c]");
+            Elements city = doc.select("[class=page-title]"); //Город
+            Elements temp = doc.select("[class=unit unit_temperature_c]"); //Температура
             String site = city.first().text();
             String temperature = temp.first().text();
-            String[] tempToSite = new String[] {site, temperature};
-            return tempToSite;
+
+            return new String[]{site, temperature}; //Полученые данные возвращаем в массиве
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Невозможно получить данные, проверьте адрес \n" + e);
         }
-        return new String[]{" "};
+        return new String[]{}; //Возвращаем пустой массив для корректной обработки ошибки
     }
 }
