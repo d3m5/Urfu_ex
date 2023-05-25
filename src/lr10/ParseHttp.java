@@ -19,6 +19,8 @@ public class ParseHttp {
             return new String[]{site, temperature}; //Полученые данные возвращаем в массиве
         } catch (IOException e) {
             System.out.println("Невозможно получить данные, проверьте адрес \n" + e);
+        } catch (NullPointerException e){
+            System.out.println("Пустое значение \n" + e);
         }
         return new String[]{}; //Возвращаем пустой массив для корректной обработки ошибки
     }

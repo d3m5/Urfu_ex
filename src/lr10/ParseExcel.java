@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ParseExcel {
-    final String filename = "src\\lr10\\exel-example.xlsx";
+    final String filename = "src\\lr10\\excel-example.xlsx";
     public void fileWrite() throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
 
@@ -46,10 +46,10 @@ public class ParseExcel {
 
         for (Row row: sheet){
             for (Cell cell : row){
-                System.out.print(cell.toString() + "\t");
+                System.out.print(cell.toString() + " | ");
 
             }
-            System.out.println();
+            System.out.println("");
         }
         workbook.close();
         inputStream.close();

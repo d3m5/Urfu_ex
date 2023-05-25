@@ -9,24 +9,33 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Json {
+    final String filename = "src\\lr10\\json-example.json";
 
-    protected void weatherSave(String site, String date, String temperature) {
-        JSONObject logTemerature = new JSONObject();
-        JSONArray sites = new JSONArray();
+    protected void jsonWrite() {
+        JSONObject library = new JSONObject();
+        JSONArray books = new JSONArray();
 
-        JSONObject site1 = new JSONObject();
-        site1.put("site", site);
-        site1.put("date", date);
-        site1.put("temperature", temperature);
-        sites.add(site1);
-        logTemerature.put("sites", sites);
+        JSONObject book1 = new JSONObject();
+        book1.put("title", "Война и мир");
+        book1.put("author", "Лев Толстой");
+        book1.put("year", 1869);
+
+        JSONObject book2 = new JSONObject();
+        book2.put("title", "Война и мир");
+        book2.put("author", "Лев Толстой");
+        book2.put("year", 1869);
+
+        books.add(book1);
+        books.add(book2);
+        library.put("books", books);
 
         try {
-            FileWriter file = new FileWriter("src\\lr10\\Site-temperature.json", false);
-            file.write(logTemerature.toJSONString());
+            FileWriter file = new FileWriter(filename, false);
+            file.write(library.toJSONString());
             file.flush();
             file.close();
-            System.out.println("Json файл успешно создан");
+            System.out.println("Json файл успешно создан " + filename);
+            System.out.println();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -34,21 +43,21 @@ public class Json {
 
     }
 
-    protected void weatherRead() {
+    protected void jsonRead() {
         try {
             JSONParser parser = new JSONParser();
-            Object obj = parser.parse(new FileReader("src\\lr10\\Site-temperature.json"));
+            Object obj = parser.parse(new FileReader(filename));
             JSONObject jsonObject = (JSONObject) obj;
             System.out.println("Корневой элемент: "
                     + jsonObject.keySet().iterator().next());
-            JSONArray jsonArray = (JSONArray) jsonObject.get("sites");
+            JSONArray jsonArray = (JSONArray) jsonObject.get("books");
 
             for (Object o : jsonArray) {
-                JSONObject weather = (JSONObject) o;
-                System.out.println("Запомненая погода");
-                System.out.println("Город:  " + weather.get("site"));
-                System.out.println("Дата:  " + weather.get("date"));
-                System.out.println("Температура: " + weather.get("temperature") + " C");
+                JSONObject book = (JSONObject) o;
+                System.out.println("\n Текущий элемент: book");
+                System.out.println("Название:  " + book.get("title"));
+                System.out.println("Автор:  " + book.get("author"));
+                System.out.println("Год: " + book.get("year"));
             }
         } catch (Exception e) {
             e.printStackTrace();
