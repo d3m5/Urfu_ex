@@ -11,6 +11,8 @@ public class Parser {
         int out = 0;
         while (out == 0) {
             DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+
+
             Date date = new Date();
             System.out.println("Программа парсер, выберите вид парсера: ");
             System.out.println("1. HTTP парсер, умеет получать температуру с сайта www.gismeteo.ru.");
