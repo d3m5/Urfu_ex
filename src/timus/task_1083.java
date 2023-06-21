@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class task_1083 {
     static Scanner in = new Scanner(System.in);
+
     public static void main(String[] args) {
         int numb = in.nextInt();
         String semne = in.next();
@@ -16,7 +17,7 @@ public class task_1083 {
         }
         int k = 1;
         for (int i = numb; i > 0; i = i - howManySemne) {
-            k = k* (numb);
+            k = k * (numb);
             numb -= howManySemne;
         }
         System.out.println(k);

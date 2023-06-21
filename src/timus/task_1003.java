@@ -8,21 +8,13 @@ import java.util.Set;
 public class task_1003 {
 
     public static void main(String[] args) {
-
-
         Scanner sc = new Scanner(System.in);
-
-
         while (true) {
-
             int N = sc.nextInt();
             if (N == -1) {
                 System.exit(0);
             }
-
             DSU dsu = new DSU();
-
-
             int M = sc.nextInt();
             int result = M;
             for (int i = 0; i < M; i++) {
@@ -45,10 +37,8 @@ public class task_1003 {
                     result = i;
                 }
             }
-
             System.out.println(result);
         }
-
     }
 
     public static class DSU {

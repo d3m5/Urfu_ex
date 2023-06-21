@@ -1,32 +1,19 @@
 package timus;
 
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Scanner;
 
 public class task_1019 {
-    public static final int LEFT = 0;
-    public static final int RIGHT = 1;
-
-    public static class Interval {
-        public int x, y;
-
-        public Interval(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
-    public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         LinkedList<Interval> whites = new LinkedList<>();
         whites.add(new Interval(0, 1000000000));
-        int N = sc.nextInt();
+        int N = in.nextInt();
         for (int i = 0; i < N; i++) {
-            int x = sc.nextInt();
-            int y = sc.nextInt();
-            char c = (char) sc.next().charAt(0);
+            int x = in.nextInt();
+            int y = in.nextInt();
+            char c = in.next().charAt(0);
             Interval k = new Interval(x, y);
             if (c == 'b') {
                 ListIterator<Interval> iterator = whites.listIterator();
@@ -82,5 +69,14 @@ public class task_1019 {
             }
         }
         System.out.println(xmax + " " + ymax);
+    }
+
+    public static class Interval {
+        public int x, y;
+
+        public Interval(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
     }
 }

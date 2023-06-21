@@ -24,12 +24,12 @@ public class task_1880 {
         }
         for (int i1 : numA) {
             for (int i2 : numB) {
-                if (i1 == i2){
-                for (int i3 : numC) {
-                    if (i1 == i2 && i2 == i3 && i3 == i1) {
-                        count++;
+                if (i1 == i2) {
+                    for (int i3 : numC) {
+                        if (i1 == i2 && i2 == i3 && i3 == i1) {
+                            count++;
+                        }
                     }
-                }
                 }
             }
         }

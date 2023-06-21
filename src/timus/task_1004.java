@@ -12,14 +12,13 @@ public class task_1004 {
     public static int path[] = new int[101];
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         do {
-            /* Read Input */
-            N = sc.nextInt();
+            N = in.nextInt();
             if (N == -1) {
                 break;
             }
-            M = sc.nextInt();
+            M = in.nextInt();
             for (int i = 1; i <= N; i++) {
                 for (int j = 1; j <= N; j++) {
                     dist[i][j] = w[i][j] = INF;
@@ -27,9 +26,9 @@ public class task_1004 {
                 }
             }
             for (int i = 1; i <= M; i++) {
-                int u = sc.nextInt();
-                int v = sc.nextInt();
-                int len = sc.nextInt();
+                int u = in.nextInt();
+                int v = in.nextInt();
+                int len = in.nextInt();
                 if (dist[u][v] > len) {
 
                     w[u][v] = w[v][u] = dist[u][v] = dist[v][u] = len;
@@ -47,26 +46,6 @@ public class task_1004 {
                 System.out.println();
             }
         } while (true);
-        sc.close();
-    }
-
-    public static void printMatrix(int W[][], int len) {
-        System.out.print("  ");
-        for (int i = 1; i <= len; i++) {
-            System.out.printf("%4d", i);
-        }
-        System.out.println();
-        for (int i = 1; i <= len; i++) {
-            System.out.printf("%d ", i);
-            for (int j = 1; j <= len; j++) {
-                if (W[i][j] >= INF) {
-                    System.out.printf("%4s", "inf");
-                } else {
-                    System.out.printf("%4d", W[i][j]);
-                }
-            }
-            System.out.println();
-        }
     }
 
     public static void floyd() {

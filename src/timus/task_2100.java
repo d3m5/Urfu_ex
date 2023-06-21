@@ -1,10 +1,14 @@
 package timus;
 
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class task_1197 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+public class task_2100 {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in, "ISO-8859-1");
+        PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out, "ISO-8859-1"));
         int n;
         n = in.nextInt();
         char[] lit = new char[n];
@@ -15,7 +19,7 @@ public class task_1197 {
             char[] tempChar = temp.toCharArray();
             char c = tempChar[0];
             lit[i] = c;
-            num[i] = tempChar[1] - '0';
+            num[i] = tempChar[1]-'0';
             if (c > 98 && c < 103) {
                 sum[i] = 8;
                 if (num[i] == 2 || num[i] == 7) {
@@ -38,9 +42,12 @@ public class task_1197 {
                     sum[i] -= 2;
                 }
             }
+
+
         }
-        for (int i = 0; i < n; i++) {
-            System.out.println(sum[i]);
-        }
+        in.close();
+        for(int i = 0; i < n; i++){
+        System.out.println(sum[i]);}
+        out.flush();
     }
 }

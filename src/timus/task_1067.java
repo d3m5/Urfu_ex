@@ -36,7 +36,7 @@ public class task_1067 {
                 inserted = true;
                 newDir   = dir;
                 break;
-            }  /* maintain lexicographic order */
+            }
             else if (compare > 0) {
                 inserted = true;
                 it.previous();
@@ -64,7 +64,6 @@ public class task_1067 {
         }
     }
     public static void printDirectory(LinkedList<Directory> tree, int level) {
-
         if (tree != null) {
             for (Directory dir : tree) {
                 for (int j = 0; j < level; j++) {
@@ -74,7 +73,5 @@ public class task_1067 {
                 printDirectory(dir.child, level + 1);
             }
         }
-
     }
-
 }

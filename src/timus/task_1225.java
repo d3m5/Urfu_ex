@@ -5,10 +5,8 @@ import java.util.Scanner;
 public class task_1225 {
     public static void main(String[] args) {
 
-
-        Scanner sc = new Scanner(System.in);
-
-        int N = sc.nextInt();
+        Scanner in = new Scanner(System.in);
+        int N = in.nextInt();
 
         long f[] = new long[46];
 
@@ -17,10 +15,7 @@ public class task_1225 {
         for (int i = 3; i <= N; i++) {
             f[i] = f[i - 1] + f[i - 2];
         }
-
         System.out.println(f[N]);
-
-        sc.close();
     }
 
 }

@@ -1,15 +1,12 @@
 package timus;
 
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class task_1910 {
 
     public static void main(String[] args) throws IOException {
-        Scanner in = new Scanner(System.in, "ISO-8859-1");
-        PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out, "ISO-8859-1"));
+        Scanner in = new Scanner(System.in);
         int Size;
         int count = 2;
         Size = in.nextInt();
@@ -25,6 +22,5 @@ public class task_1910 {
                 }
         in.close();
         System.out.println(sum+" "+count);
-        out.flush();
     }
 }
